@@ -9,6 +9,7 @@
         <th>doj</th>
         <th>Delete Record</th>
         <th>Update Record</th>
+        <th>View Score</th>
     </thead>
     <tbody>
         <tr *ngFor="let emps of emps">
@@ -21,6 +22,7 @@
             <td>{{emps.doj}}</td>
             <td><input type="button" value="Delete" (click)="deleteEmployee(emps.empid)"></td>
             <td><input type="button" value="Update" (click)="updateEmployee(emps)"></td>
+            <td><input type="button" value="View Score Details"></td>
         </tr>
     </tbody>
 </table>

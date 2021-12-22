@@ -29,5 +29,4 @@ emps:any
     this.edit.updateRecord(emps)
     this.router.navigateByUrl('/update')
   }
-
 }
