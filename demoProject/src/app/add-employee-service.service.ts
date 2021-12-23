@@ -1,6 +1,7 @@
 import { Injectable } from '@angular/core';
 import { HttpClient} from '@angular/common/http';
 import { EmployeeData } from './EmployeeData';
+import { adminDetails } from './adminDetails';
 
 @Injectable({
   providedIn: 'root'
@@ -29,5 +30,17 @@ export class AddEmployeeServiceService {
 
   public updateEmployee(data: EmployeeData){
     return this.http.put("http://localhost:8080/update",data,{responseType:"text" as "json"})
+  }
+
+  //function to hit insertadmin api in backend
+  public addAdmin(adminData:adminDetails)
+  {
+    return this.http.post("http://localhost:8080/insertadmin",adminData,{responseType:"text" as "json"})
+  }
+
+  //function to hit login/id/password api in backend
+  public authenticateAdmin(adminId:number,password:string)
+  {
+    return this.http.get("http://localhost:8080/login/"+adminId+"/"+password,{responseType:"text" as "json"})
   }
 }

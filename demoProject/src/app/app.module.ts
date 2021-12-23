@@ -19,6 +19,7 @@ import { RegisterComponent } from './register/register.component';
 import { GreetEmpComponent } from './greet-emp/greet-emp.component';
 import { SearchComponent } from './search/search.component';
 import { UpdateComponent } from './update/update.component';
+import { SignupComponent } from './signup/signup.component';
 
 @NgModule({
   declarations: [
@@ -29,7 +30,8 @@ import { UpdateComponent } from './update/update.component';
     RegisterComponent,
     GreetEmpComponent,
     SearchComponent,
-    UpdateComponent
+    UpdateComponent,
+    SignupComponent
   ],
   imports: [
     BrowserModule,

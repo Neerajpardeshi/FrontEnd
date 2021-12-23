@@ -23,5 +23,4 @@ export class UpdateComponent implements OnInit {
       this.message=msg
     })
   }
-
 }

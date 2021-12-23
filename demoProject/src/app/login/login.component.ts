@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+import { AddEmployeeServiceService } from '../add-employee-service.service';
 import { AuthServiceService } from '../auth-service.service';
 
 @Component({
@@ -9,18 +10,21 @@ import { AuthServiceService } from '../auth-service.service';
 })
 export class LoginComponent implements OnInit {
 
-  username:string="admin"
-  password:string="admin"
-
-  constructor(private auth1:AuthServiceService,private router:Router) { }
+  message:any
+  adminId:number=0
+  password:string=""
+  constructor(private service:AddEmployeeServiceService) { }
 
   ngOnInit(): void {
   }
   
-  authenticate()
-  {
-    //functions
-    this.auth1.setUserName(this.username)
-    this.router.navigateByUrl('/productlist')
+  public authenticateNow(){
+    let response=this.service.authenticateAdmin(this.adminId,this.password)
+    response.subscribe(msg=>{
+      this.message=msg
+    })
   }
+
+
+
 }

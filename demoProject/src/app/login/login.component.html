@@ -1,16 +1,22 @@
+<div>
+    {{message}}
+</div>
 <h3>Login</h3>
 <form>
+    <table>
+        <tbody>
+            <tr>
+                <td>Enter Admin Id:</td>
+                <td><input type="text" name="adminId" [(ngModel)]="adminId"></td>
+            </tr>
+            <tr>
+                <td>Enter Password</td>
+                <td><input type="password" name="password" [(ngModel)]="password"></td>
+            </tr>
+        </tbody>
+    </table>
     <div>
-        <label>Username : </label>
-        <input type="text" name="username" [(ngModel)]="username">
-    </div>
-    <div>
-        <label>password : </label>
-        <input type="password" name="password" [(ngModel)]="password">
-    </div>
-    <div>
-        <label></label>
-        <button (click)="authenticate()">Login</button>
+        <input type="button" value="Login" (click)="authenticateNow()">
     </div>
 </form>
-username = {{username}}
+
